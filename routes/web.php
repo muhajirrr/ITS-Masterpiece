@@ -12,5 +12,19 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('landing');
 });
+
+Route::get('/landing', function() {
+    return view('landing');
+});
+
+Route::get('/login', function() {
+    return view('login');
+});
+
+Route::view('/admin', 'admin.users.index');
+
+Route::get('/{test}', function($test) {
+    return $test;
+})->name('ajax');

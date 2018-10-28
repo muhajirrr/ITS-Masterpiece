@@ -1,0 +1,79 @@
+body {
+    background: url(../img/background.png);
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.nav {
+    padding: 24px 0 0 0 !important;
+    align-items: center;
+}
+
+.brand {
+    color: white;
+    font-size: 1.8rem;
+}
+
+.btn {
+    background: white;
+    border-radius: 50px;
+    text-decoration: none;
+    padding: 10px 15px;
+    color: black;
+    border: none;
+    cursor: pointer;
+    transition: .4s;
+    -o-transition: .4s;
+    -moz-transition: .4s;
+}
+
+.btn:hover {
+    background: #e03b00;
+    color: white;
+}
+
+.logo ul {
+    list-style-type: none;
+    display: flex;
+    padding: unset;
+    margin: auto;
+    justify-content: center;
+}
+
+.logo ul li img {
+    width: 54px;
+    height: 54px;
+    padding: 4px;
+}
+
+.content {
+    height: 100vh;
+    background: white;
+}
+
+.nav-menu {
+    font-size: 1.2rem !important;
+}
+
+.nav-menu .item {
+    display: inline-block !important;
+    color: rgba(255, 255, 255, .7) !important;
+    font-size: 1.15rem !important;
+}
+
+.nav-menu .item.active {
+    color: white !important;
+    border-color: unset !important;
+    border-bottom: 6px solid white !important;
+}
+
+.nav-menu .menu {
+    border-bottom: unset !important;
+}
+
+.footer {
+    color: white;
+    padding: 24px 0 !important;
+    margin-top: unset !important;
+    font-size: 1.1rem;
+}
