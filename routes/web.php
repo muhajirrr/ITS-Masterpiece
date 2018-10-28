@@ -19,7 +19,7 @@ Route::get('/landing', function() {
     return view('landing');
 });
 
-Route::get('/login', function() {
+Route::get('/masuk', function() {
     return view('login');
 });
 
@@ -28,3 +28,7 @@ Route::view('/admin', 'admin.users.index');
 Route::get('/{test}', function($test) {
     return $test;
 })->name('ajax');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
