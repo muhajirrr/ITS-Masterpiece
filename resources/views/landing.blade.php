@@ -26,7 +26,7 @@
                 </div>
 
                 <div class="column right aligned">
-                    <a href="/login" class="btn">Masuk</a>
+                    <a href="/login" class="btn">Login</a>
                 </div>
             </div>
         </div>
@@ -47,7 +47,7 @@
     </div>
 
 
-    <div class="content">
+    <div class="landing-content">
 
         <div class="ui tab active" data-tab="first">
             
