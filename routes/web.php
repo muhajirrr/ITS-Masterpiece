@@ -23,12 +23,10 @@ Route::get('/masuk', function() {
     return view('login');
 });
 
-Route::view('/admin', 'admin.users.index');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/{test}', function($test) {
     return $test;
 })->name('ajax');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

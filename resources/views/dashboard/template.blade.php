@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        @include('admin.components.meta')
+        @include('dashboard.components.meta')
         <title>Masterpiece ITS | @yield('title')</title>
-        @include('admin.components.css')
+        @include('dashboard.components.css')
     </head>
     <body>
         <div class="wrapper">
-            @include('admin.components.sidebar')
+            @include('dashboard.components.sidebar')
 
             <div class="main-panel">
-                @include('admin.components.navbar')
+                @include('dashboard.components.navbar')
 
                 <div class="content">
                     <div class="container-fluid">
@@ -21,6 +21,6 @@
                 </div>
             </div>
         </div>
-        @include('admin.components.js')
+        @include('dashboard.components.js')
     </body>
 </html>
