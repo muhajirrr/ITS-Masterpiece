@@ -6,3 +6,11 @@
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
 <script src="{{ asset('dashboard/js/paper-dashboard.js') }}"></script>
 {{-- <script src="{{ asset('dashboard/js/demo.js') }}"></script> --}}
+<script>
+    $(function() {
+        var element = $('ul.sidemenu a').filter(function() {
+            return '{{ url()->current() }}'.indexOf(this.href) != -1;
+        }).parent().addClass('active');
+    });
+</script>
+@yield('js')

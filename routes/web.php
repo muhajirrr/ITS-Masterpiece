@@ -15,17 +15,18 @@ Route::get('/', function () {
     return view('landing');
 });
 
-Route::get('/landing', function() {
-    return view('landing');
-});
-
-Route::get('/masuk', function() {
-    return view('login');
-});
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::prefix('/user')->group(function() {
+    Route::get('/', 'UserController@index')->name('user.index');
+    Route::get('/create', 'UserController@create')->name('user.create');
+    Route::post('/store', 'UserController@store')->name('user.store');
+    Route::get('/{id}/edit', 'UserController@edit')->name('user.edit');
+    Route::put('/{id}/update', 'UserController@update')->name('user.update');
+    Route::delete('/{id}/delete', 'UserController@destroy')->name('user.delete');
+});
 
 Route::get('/{test}', function($test) {
     return $test;

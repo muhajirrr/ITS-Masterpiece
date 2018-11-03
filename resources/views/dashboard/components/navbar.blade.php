@@ -14,7 +14,7 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <i class="ti-user"></i>
-                        <p>User</p>
+                        <p>{{ Auth::user()->name }}</p>
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu">

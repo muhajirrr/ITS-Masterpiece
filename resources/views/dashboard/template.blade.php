@@ -13,11 +13,7 @@
                 @include('dashboard.components.navbar')
 
                 <div class="content">
-                    <div class="container-fluid">
-                        <div class="row">
-                            @yield('content')
-                        </div>
-                    </div>
+                    @yield('content')
                 </div>
             </div>
         </div>
