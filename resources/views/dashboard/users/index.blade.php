@@ -2,10 +2,6 @@
 
 @section('title', 'Manage Users')
 
-@section('css')
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-@endsection
-
 @section('content')
     <div class="container-fluid">
         <div class="row">
@@ -36,7 +32,7 @@
                                         <td>{{ implode(',', $user->roles()->pluck('name')->toArray()) }}</td>
                                         <td>
                                             <a href="{{ route('user.edit', $user->id) }}" class="btn btn-warning">Edit</a>
-                                            <button class="btn btn-danger" onclick="delete_action('#formDelete{{ $user->id }}')" data-form="formDelete{{ $user->id }}" id="delete{{ $user->id }}">Delete</button>
+                                            <button class="btn btn-danger" onclick="delete_action('#formDelete{{ $user->id }}')">Delete</button>
 
                                             {!! Form::open(['route' => ['user.delete', $user->id], 'method' => 'DELETE', 'id' => 'formDelete'.$user->id]) !!}
                                             {!! Form::close() !!}
@@ -54,6 +50,8 @@
 @endsection
 
 @section('js')
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    
     @if ($message = Session::get('success'))
         @include('dashboard.components.notification', ['body' => $message, 'type' => 'success'])
     @endif

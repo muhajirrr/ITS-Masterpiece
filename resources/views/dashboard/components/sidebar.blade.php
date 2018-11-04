@@ -14,6 +14,18 @@
                 </a>
             </li>
             <li>
+                <a href="{{ route('karya.index') }}">
+                    <i class="ti-palette"></i>
+                    <p>Karya Mahasiswa</p>
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('kompetisi.index') }}">
+                    <i class="ti-cup"></i>
+                    <p>Kompetisi</p>
+                </a>
+            </li>
+            <li>
                 <a href="{{ route('user.index') }}">
                     <i class="ti-user"></i>
                     <p>Manage Users</p>
