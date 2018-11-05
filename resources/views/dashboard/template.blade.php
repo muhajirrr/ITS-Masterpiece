@@ -18,5 +18,6 @@
             </div>
         </div>
         @include('dashboard.components.js')
+        @include('dashboard.components.notification')
     </body>
 </html>

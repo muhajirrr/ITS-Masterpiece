@@ -3,10 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreKaryaMahasiswa;
+use App\Http\Requests\UpdateKaryaMahasiswa;
+use Illuminate\Support\Facades\Session;
 use App\KaryaMahasiswa;
 
 class KaryaMahasiswaController extends Controller
 {
+    public function __construct() {
+        $this->middleware('auth');
+    }
+
     public function index() {
         $karyas = KaryaMahasiswa::all();
 
@@ -17,7 +24,7 @@ class KaryaMahasiswaController extends Controller
         return view('dashboard.karya.create');
     }
 
-    public function store(Request $request) {
+    public function store(StoreKaryaMahasiswa $request) {
         $image_path = $request->file('image')->store('image', 'public');
         $karya = KaryaMahasiswa::create([
             'title' => $request->title,
@@ -25,6 +32,8 @@ class KaryaMahasiswaController extends Controller
             'image' => $image_path,
             'content' => $request->content
         ]);
+
+        Session::flash('success', 'Post <b>'. $karya->title .'</b> berhasil ditambahkan.');
 
         return redirect(route('karya.index'));
     }
@@ -35,7 +44,7 @@ class KaryaMahasiswaController extends Controller
         return view('dashboard.karya.edit', compact('karya'));
     }
 
-    public function update(Request $request, $id) {
+    public function update(UpdateKaryaMahasiswa $request, $id) {
         $karya = KaryaMahasiswa::findOrFail($id);
 
         if ($image = $request->file('image')) {
@@ -48,12 +57,16 @@ class KaryaMahasiswaController extends Controller
             'content' => $request->content
         ])->save();
 
+        Session::flash('success', 'Post <b>'. $karya->title .'</b> berhasil diubah.');
+
         return redirect(route('karya.index'));
     }
 
     public function destroy($id) {
         $karya = KaryaMahasiswa::findOrFail($id);
         $karya->delete();
+
+        Session::flash('success', 'Post <b>'. $karya->title .'</b> berhasil dihapus.');
 
         return redirect(route('karya.index'));
     }

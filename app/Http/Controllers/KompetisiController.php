@@ -3,10 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+use App\Http\Requests\StoreKompetisi;
+use App\Http\Requests\UpdateKompetisi;
 use App\Kompetisi;
 
 class KompetisiController extends Controller
 {
+    public function __construct() {
+        $this->middleware('auth');
+    }
+    
     public function index() {
         $kompetisis = Kompetisi::all();
 
@@ -17,7 +24,7 @@ class KompetisiController extends Controller
         return view('dashboard.kompetisi.create');
     }
 
-    public function store(Request $request) {
+    public function store(StoreKompetisi $request) {
         $image_path = $request->file('image')->store('image', 'public');
         $kompetisi= Kompetisi::create([
             'title' => $request->title,
@@ -25,6 +32,8 @@ class KompetisiController extends Controller
             'image' => $image_path,
             'content' => $request->content
         ]);
+
+        Session::flash('success', 'Post <b>'. $kompetisi->title .'</b> berhasil ditambahkan.');
 
         return redirect(route('kompetisi.index'));
     }
@@ -35,7 +44,7 @@ class KompetisiController extends Controller
         return view('dashboard.kompetisi.edit', compact('kompetisi'));
     }
 
-    public function update(Request $request, $id) {
+    public function update(UpdateKompetisi $request, $id) {
         $kompetisi = Kompetisi::findOrFail($id);
 
         if ($image = $request->file('image')) {
@@ -48,12 +57,16 @@ class KompetisiController extends Controller
             'content' => $request->content
         ])->save();
 
+        Session::flash('success', 'Post <b>'. $kompetisi->title .'</b> berhasil diubah.');
+
         return redirect(route('kompetisi.index'));
     }
 
     public function destroy($id) {
         $kompetisi = Kompetisi::findOrFail($id);
         $kompetisi->delete();
+
+        Session::flash('success', 'Post <b>'. $kompetisi->title .'</b> berhasil dihapus.');
 
         return redirect(route('kompetisi.index'));
     }

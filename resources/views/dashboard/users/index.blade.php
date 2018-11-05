@@ -51,10 +51,6 @@
 
 @section('js')
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    
-    @if ($message = Session::get('success'))
-        @include('dashboard.components.notification', ['body' => $message, 'type' => 'success'])
-    @endif
 
     <script>
         function delete_action(id_form) {
