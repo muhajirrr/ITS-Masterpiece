@@ -26,7 +26,7 @@ class KompetisiController extends Controller
 
     public function store(StoreKompetisi $request) {
         $image_path = $request->file('image')->store('image', 'public');
-        $kompetisi= Kompetisi::create([
+        $kompetisi = Kompetisi::create([
             'title' => $request->title,
             'title_slug' => str_slug($request->title),
             'image' => $image_path,

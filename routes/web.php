@@ -46,6 +46,33 @@ Route::prefix('/kompetisi')->group(function() {
     Route::delete('/{id}/delete', 'KompetisiController@destroy')->name('kompetisi.delete');
 });
 
+Route::prefix('/lomba')->group(function() {
+    Route::get('/', 'LombaController@index')->name('lomba.index');
+    Route::get('/create', 'LombaController@create')->name('lomba.create');
+    Route::post('/store', 'LombaController@store')->name('lomba.store');
+    Route::get('/{id}/edit', 'LombaController@edit')->name('lomba.edit');
+    Route::put('/{id}/update', 'LombaController@update')->name('lomba.update');
+    Route::delete('/{id}/delete', 'LombaController@destroy')->name('lomba.delete');
+});
+
+Route::prefix('/exchange')->group(function() {
+    Route::get('/', 'ExchangeController@index')->name('exchange.index');
+    Route::get('/create', 'ExchangeController@create')->name('exchange.create');
+    Route::post('/store', 'ExchangeController@store')->name('exchange.store');
+    Route::get('/{id}/edit', 'ExchangeController@edit')->name('exchange.edit');
+    Route::put('/{id}/update', 'ExchangeController@update')->name('exchange.update');
+    Route::delete('/{id}/delete', 'ExchangeController@destroy')->name('exchange.delete');
+});
+
+Route::prefix('/paper')->group(function() {
+    Route::get('/', 'PaperController@index')->name('paper.index');
+    Route::get('/create', 'PaperController@create')->name('paper.create');
+    Route::post('/store', 'PaperController@store')->name('paper.store');
+    Route::get('/{id}/edit', 'PaperController@edit')->name('paper.edit');
+    Route::put('/{id}/update', 'PaperController@update')->name('paper.update');
+    Route::delete('/{id}/delete', 'PaperController@destroy')->name('paper.delete');
+});
+
 Route::get('/{test}', function($test) {
     return $test;
 })->name('ajax');

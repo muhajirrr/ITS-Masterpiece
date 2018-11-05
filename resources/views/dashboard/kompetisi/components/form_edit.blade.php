@@ -1,7 +1,7 @@
 {!! Form::model($kompetisi, ['route' => ['kompetisi.update', $kompetisi->id], 'autocomplete' => 'off', 'enctype' => 'multipart/form-data', 'method' => 'PUT']) !!}
 
 <div class="form-group">
-    {!! Form::label('title', 'Title') !!}w
+    {!! Form::label('title', 'Title') !!}
     {!! Form::text('title', null, ['class' => 'form-control border-input', 'placeholder' => 'Title', 'required']) !!}
 </div>
 
