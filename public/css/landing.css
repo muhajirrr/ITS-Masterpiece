@@ -14,12 +14,9 @@ body {
     font-size: 1.8rem;
 }
 
-.btn {
-    background: white;
-    border-radius: 50px;
+.btn, .flat-btn {
     text-decoration: none;
     padding: 10px 15px;
-    color: black;
     border: none;
     cursor: pointer;
     transition: .4s;
@@ -27,7 +24,20 @@ body {
     -moz-transition: .4s;
 }
 
-.btn:hover {
+.btn {
+    background: white;
+    color: black;
+    border-radius: 50px;    
+}
+
+.flat-btn {
+    background: black;
+    color: white;
+    border-radius: unset;
+    margin: 0 !important;
+}
+
+.btn:hover, .flat-btn:hover {
     background: #e03b00;
     color: white;
 }
@@ -47,8 +57,7 @@ body {
 }
 
 .landing-content {
-    height: 100vh;
-    background: white;
+    background: #F3F3EE;
 }
 
 .nav-menu {
@@ -76,4 +85,70 @@ body {
     padding: 24px 0 !important;
     margin-top: unset !important;
     font-size: 1.1rem;
+}
+
+.post {
+    background: #fff !important;
+    -webkit-box-shadow: 0 1px 2px 0 rgba(34,36,38,.15) !important;
+    box-shadow: 0 1px 2px 0 rgba(34,36,38,.15) !important;
+    margin: 1rem 0 !important;
+    /* padding: 1em 1em !important; */
+    border-radius: .28571429rem !important;
+    border: 1px solid rgba(34,36,38,.15) !important;
+}
+
+.image-post {
+    width: 240px !important;
+    height: 180px !important;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-right: unset !important;
+    margin-left: unset !important;
+}
+
+.flat-btn.disabled {
+    background: gray;
+}
+
+ul.pagination {
+    list-style-type: none;
+    text-align: center;
+}
+
+ul.pagination li {
+    display: inline-block;
+}
+
+.pagination .page-item.prev .page-link, .pagination .page-item.next .page-link {
+    padding: 8px 16px;
+    border: none;
+    transition: .4s;
+    -o-transition: .4s;
+    text-decoration: none;
+    -moz-transition: .4s;
+    color: white;
+    border-radius: unset;
+    margin: 0 24px !important;
+}
+
+.pagination .page-item.prev:not(.disabled) .page-link, .pagination .page-item.next:not(.disabled) .page-link {
+    cursor: pointer;
+    background: black;
+}
+
+.pagination .page-item.prev.disabled .page-link, .pagination .page-item.next.disabled .page-link{
+    background: grey;
+}
+
+.page-item {
+    margin: 0 2px;
+}
+
+.page-item.active .page-link {
+    color: grey;
+}
+
+.page-item:not(.active) .page-link {
+    color: black;
 }
