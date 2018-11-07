@@ -28,12 +28,12 @@ class LombaController extends Controller
         $lomba = Lomba::create([
             'nama' => $request->nama,
             'angkatan' => $request->angkatan,
-            'departemen' => $request->departemen,
             'nama_lomba' => $request->nama_lomba,
             'juara' => $request->juara,
             'penyelenggara' => $request->penyelenggara,
             'bukti' => $image_path,
-            'status' => 0
+            'status' => 0,
+            'id_user' => Auth::user()->id
         ]);
 
         return redirect(route('lomba.index'));
@@ -55,7 +55,6 @@ class LombaController extends Controller
         $lomba->fill([
             'nama' => $request->nama,
             'angkatan' => $request->angkatan,
-            'departemen' => $request->departemen,
             'nama_lomba' => $request->nama_lomba,
             'juara' => $request->juara,
             'penyelenggara' => $request->penyelenggara,

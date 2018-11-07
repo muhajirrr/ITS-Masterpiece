@@ -73,6 +73,15 @@ Route::prefix('/dashboard')->group(function() {
         Route::put('/{id}/update', 'PaperController@update')->name('paper.update');
         Route::delete('/{id}/delete', 'PaperController@destroy')->name('paper.delete');
     });
+
+    Route::prefix('/pkm')->group(function() {
+        Route::get('/', 'PKMController@index')->name('pkm.index');
+        Route::get('/create', 'PKMController@create')->name('pkm.create');
+        Route::post('/store', 'PKMController@store')->name('pkm.store');
+        Route::get('/{id}/edit', 'PKMController@edit')->name('pkm.edit');
+        Route::put('/{id}/update', 'PKMController@update')->name('pkm.update');
+        Route::delete('/{id}/delete', 'PKMController@destroy')->name('pkm.delete');
+    });
 });
 
 Route::get('/karya', 'FrontPageController@karya');

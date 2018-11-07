@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Lomba extends Model
 {
     protected $fillable = [
-        'nama', 'angkatan', 'departemen', 'nama_lomba', 'juara', 'penyelenggara', 'bukti', 'status'
+        'nama', 'angkatan', 'nama_lomba', 'juara', 'penyelenggara', 'bukti', 'status', 'id_user'
     ];
 }

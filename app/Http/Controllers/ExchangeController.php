@@ -16,7 +16,7 @@ class ExchangeController extends Controller
     public function index() {
         $exchanges = Exchange::all();
 
-        return view('dashboard.exchange.index');
+        return view('dashboard.exchange.index', compact('exchanges'));
     }
 
     public function create() {
@@ -28,10 +28,10 @@ class ExchangeController extends Controller
         $exchange = Exchange::create([
             'nama' => $request->nama,
             'angkatan' => $request->angkatan,
-            'departemen' => $request->departemen,
             'keterangan' => $request->keterangan,
             'bukti' => $image_path,
-            'status' => 0
+            'status' => 0,
+            'id_user' => Auth::user()->id
         ]);
 
         return redirect(route('exchange.index'));
@@ -53,10 +53,9 @@ class ExchangeController extends Controller
         $exchange->fill([
             'nama' => $request->nama,
             'angkatan' => $request->angkatan,
-            'departemen' => $request->departemen,
             'keterangan' => $request->keterangan,
             'status' => 0
-        ]);
+        ])->save();
 
         return redirect(route('exchange.index'));
     }

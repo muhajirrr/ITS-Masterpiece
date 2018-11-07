@@ -17,10 +17,10 @@ class CreateExchangesTable extends Migration
             $table->increments('id');
             $table->string('nama');
             $table->char('angkatan', 4);
-            $table->string('departemen');
             $table->string('keterangan');
             $table->string('bukti');
             $table->tinyInteger('status');
+            $table->unsignedInteger('id_user');
             $table->timestamps();
         });
     }

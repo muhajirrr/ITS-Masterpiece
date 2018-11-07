@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateLomba extends FormRequest
+class StorePKM extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,12 +24,7 @@ class UpdateLomba extends FormRequest
     public function rules()
     {
         return [
-            'nama' => 'required',
-            'angkatan' => 'required',
-            'nama_lomba' => 'required',
-            'juara' => 'required',
-            'penyelenggara' => 'required',
-            'bukti' => 'nullable|image|max:2048'
+            //
         ];
     }
 }

@@ -1,6 +1,6 @@
 @extends('dashboard.template')
 
-@section('title', 'Kelola Lomba')
+@section('title', 'Kelola PKM')
 
 @section('content')
     <div class="container-fluid">
@@ -8,13 +8,13 @@
             <div class="col-xs-12">
                 <div class="card">
                     <div class="header">
-                        <h4 class="title">Edit Lomba</h4>
+                        <h4 class="title">Tambah PKM</h4>
                     </div>
 
                     <div class="content">
                         <div class="row">
                             <div class="col-md-6">
-                                @include('dashboard.lomba.components.form_edit')
+                                @include('dashboard.pkm.components.form_create')
                             </div>
                         </div>
                     </div>

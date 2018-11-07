@@ -8,7 +8,7 @@
             <div class="col-xs-12">
                 <div class="card">
                     <div class="header">
-                        <h4 class="title">Tambah Karya Mahasiswa</h4>
+                        <h4 class="title">Edit Karya Mahasiswa</h4>
                     </div>
 
                     <div class="content">

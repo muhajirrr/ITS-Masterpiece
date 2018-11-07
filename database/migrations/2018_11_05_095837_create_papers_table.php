@@ -16,10 +16,11 @@ class CreatePapersTable extends Migration
         Schema::create('papers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama');
-            $table->string('himpunan');
+            $table->char('angkatan', 4);
             $table->text('judul');
             $table->string('status_paper');
             $table->tinyInteger('status');
+            $table->unsignedInteger('id_user');
             $table->timestamps();
         });
     }

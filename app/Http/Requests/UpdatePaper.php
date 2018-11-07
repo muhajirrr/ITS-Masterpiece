@@ -13,7 +13,7 @@ class UpdatePaper extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,11 @@ class UpdatePaper extends FormRequest
     public function rules()
     {
         return [
-            //
+            'nama' => 'required',
+            'angkatan' => 'required','angkatan' => $request->angkatan,
+            'judul' => 'required',
+            'status_paper' => 'required',
+            'bukti' => 'nullable|image|max:2048'
         ];
     }
 }

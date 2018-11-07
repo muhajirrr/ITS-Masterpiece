@@ -27,11 +27,12 @@ class PaperController extends Controller
         $image_path = $request->file('bukti')->store('image', 'public');
         $paper = Paper::create([
             'nama' => $request->nama,
-            'himpunan' => $request->himpunan,
+            'angkatan' => $request->angkatan,
             'judul' => $request->judul,
             'status_paper' => $request->status_paper,
             'bukti' => $image_path,
-            'status' => 0
+            'status' => 0,
+            'id_user' => Auth::user()->id
         ]);
 
         return redirect(route('paper.index'));
@@ -52,7 +53,7 @@ class PaperController extends Controller
 
         $paper->fill([
             'nama' => $request->nama,
-            'himpunan' => $request->himpunan,
+            'angkatan' => $request->angkatan,
             'judul' => $request->judul,
             'status_paper' => $request->status_paper,
             'status' => 0

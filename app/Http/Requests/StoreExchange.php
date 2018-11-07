@@ -13,7 +13,7 @@ class StoreExchange extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,10 @@ class StoreExchange extends FormRequest
     public function rules()
     {
         return [
-            //
+            'nama' => 'required',
+            'angkatan' => 'required|numeric|max:4',
+            'keterangan' => 'required',
+            'bukti' => 'required|image|max:2048',
         ];
     }
 }

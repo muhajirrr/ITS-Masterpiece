@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLombasTable extends Migration
+class CreatePKMsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,13 @@ class CreateLombasTable extends Migration
      */
     public function up()
     {
-        Schema::create('lombas', function (Blueprint $table) {
+        Schema::create('pkms', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama');
-            $table->char('angkatan', 4);
-            $table->string('nama_lomba');
+            $table->string('judul');
             $table->string('juara');
-            $table->string('penyelenggara');
             $table->string('bukti');
-            $table->tinyInteger('status');
+            $table->string('status');
             $table->unsignedInteger('id_user');
             $table->timestamps();
         });
@@ -34,6 +32,6 @@ class CreateLombasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lombas');
+        Schema::dropIfExists('p_k_ms');
     }
 }

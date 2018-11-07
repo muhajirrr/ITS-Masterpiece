@@ -24,7 +24,12 @@ class StoreLomba extends FormRequest
     public function rules()
     {
         return [
-            //
+            'nama' => 'required',
+            'angkatan' => 'required',
+            'nama_lomba' => 'required',
+            'juara' => 'required',
+            'penyelenggara' => 'required',
+            'bukti' => 'required|image|max:2048'
         ];
     }
 }
