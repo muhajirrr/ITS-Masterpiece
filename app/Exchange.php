@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Exchange extends Model
 {
     protected $fillable = [
-        'nama', 'angkatan', 'keterangan', 'bukti', 'status', 'id_user'
+        'nama', 'nrp','angkatan', 'keterangan', 'bukti', 'status', 'id_user'
     ];
 }

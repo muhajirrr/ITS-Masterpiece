@@ -85,9 +85,14 @@ Route::prefix('/dashboard')->group(function() {
 });
 
 Route::get('/karya', 'FrontPageController@karya');
-
 Route::get('/kompetisi', 'FrontPageController@kompetisi');
+Route::get('/prestasi', 'FrontPageController@prestasi');
 
-Route::get('/{test}', function($test) {
+Route::get('/prestasi/lomba', 'FrontPageController@lomba');
+Route::get('/prestasi/pkm', 'FrontPageController@pkm');
+Route::get('/prestasi/paper', 'FrontPageController@paper');
+Route::get('/prestasi/exchange', 'FrontPageController@exchange');
+
+Route::get('/prestasi/{test}', function($test) {
     return $test;
 })->name('ajax');

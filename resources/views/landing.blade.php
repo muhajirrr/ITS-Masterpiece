@@ -32,7 +32,7 @@
         </div>
 
         <div class="nav-menu ui center aligned grid container">
-            <div class="ui secondary pointing menu column">
+            <div class="ui secondary pointing menu column main-menu">
                 <a class="active item" data-tab="karya">
                     Karya Mahasiswa
                 </a>
@@ -64,6 +64,12 @@
     
     <div class="footer ui center aligned grid container">
         <div class="twelve wide column">
+            <div class="jarak">
+                <p><h7>Supported By</h7></p>
+                <img src="{{ asset('img/ikomaputih.png') }}" alt="Ikatan Orang Tua Mahasiswa ITS" style="height: 75px;
+                width: auto;">
+            </div>
+            <br>
             &copy; 2018 Kementrian Riset dan Teknologi BEM ITS
         </div>
     </div>
@@ -75,10 +81,10 @@
 
     <script>
         $(function() {
-            $('.menu .item').tab('change tab', 'karya');
+            $('.main-menu .item').tab('change tab', 'karya');
         });
 
-        $('.menu .item').tab({
+        $('.main-menu .item').tab({
             alwaysRefresh: true,
             cache: false,
             apiSettings: {
