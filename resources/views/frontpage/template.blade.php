@@ -7,9 +7,7 @@
     </head>
     <body>
         @include('frontpage.components.navbar')
-        <div class="landing-content">
-            @yield('content')
-        </div>
+        @yield('content')
         @include('frontpage.components.footer')
         @include('frontpage.components.js')
     </body>

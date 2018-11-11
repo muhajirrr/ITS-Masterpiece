@@ -17,14 +17,16 @@
 @endsection
 
 @section('content')
-    <div class="ui grid">
-        <div class="three wide column"></div>
-        <div class="ten wide column">
-            <div class="ui tab active" data-tab="karya"></div>
-            <div class="ui tab" data-tab="kompetisi"></div>
-            <div class="ui tab" data-tab="prestasi"></div>
+    <div class="landing-content">
+        <div class="ui grid">
+            <div class="three wide column"></div>
+            <div class="ten wide column">
+                <div class="ui tab active" data-tab="karya"></div>
+                <div class="ui tab" data-tab="kompetisi"></div>
+                <div class="ui tab" data-tab="prestasi"></div>
+            </div>
+            <div class="three wide column"></div>
         </div>
-        <div class="three wide column"></div>
     </div>
 @endsection
 
