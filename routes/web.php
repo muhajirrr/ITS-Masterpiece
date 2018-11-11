@@ -12,12 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('landing');
+    return view('frontpage.landing.index');
 })->name('landing');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/karya/{title}', 'FrontPageController@read_karya')->name('karya.read');
 
 Route::prefix('/dashboard')->group(function() {
     Route::prefix('/user')->group(function() {
