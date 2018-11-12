@@ -6,6 +6,11 @@
 </div>
 
 <div class="form-group">
+    {!! Form::label('nrp', 'NRP') !!}
+    {!! Form::text('nrp', null, ['class' => 'form-control border-input', 'placeholder' => 'NRP', 'required']) !!}
+</div>
+
+<div class="form-group">
     {!! Form::label('angkatan', 'Angkatan') !!}
     {!! Form::text('angkatan', null, ['class' => 'form-control border-input', 'placeholder' => 'Angkatan', 'required']) !!}
 </div>

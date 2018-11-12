@@ -25,9 +25,10 @@ class StoreExchange extends FormRequest
     {
         return [
             'nama' => 'required',
-            'angkatan' => 'required|numeric|max:4',
+            'nrp' => 'required|digits:14',
+            'angkatan' => 'required|digits:4',
             'keterangan' => 'required',
-            'bukti' => 'required|image|max:2048',
+            'bukti' => 'required|image|max:5120',
         ];
     }
 }

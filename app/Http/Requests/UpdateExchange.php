@@ -25,9 +25,10 @@ class UpdateExchange extends FormRequest
     {
         return [
             'nama' => 'required',
-            'angkatan' => 'required|numeric|max:4',
+            'nrp' => 'required|digits:14',
+            'angkatan' => 'required|digits:4',
             'keterangan' => 'required',
-            'bukti' => 'nullable|image|max:2048',
+            'bukti' => 'nullable|image|max:5120',
         ];
     }
 }

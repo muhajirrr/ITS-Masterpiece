@@ -64,6 +64,8 @@ Route::prefix('/dashboard')->group(function() {
         Route::get('/{id}/edit', 'ExchangeController@edit')->name('exchange.edit');
         Route::put('/{id}/update', 'ExchangeController@update')->name('exchange.update');
         Route::delete('/{id}/delete', 'ExchangeController@destroy')->name('exchange.delete');
+        Route::post('/{id}/accept', 'ExchangeController@accept')->name('exchange.accept');
+        Route::post('/{id}/reject', 'ExchangeController@reject')->name('exchange.reject');
     });
     
     Route::prefix('/paper')->group(function() {

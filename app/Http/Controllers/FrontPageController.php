@@ -51,7 +51,7 @@ class FrontPageController extends Controller
             return redirect(route('landing'));
         }
 
-        $lombas = Lomba::latest('created_at')->paginate(3);
+        $lombas = Lomba::where('status', 1)->latest('created_at')->paginate(3);
 
         return view('frontpage.prestasi.lomba', compact('lombas'));
     }
@@ -61,7 +61,7 @@ class FrontPageController extends Controller
             return redirect(route('landing'));
         }
 
-        $pkms = PKM::latest('created_at')->paginate(3);
+        $pkms = PKM::where('status', 1)->latest('created_at')->paginate(3);
 
         return view('frontpage.prestasi.pkm', compact('pkms'));
     }
@@ -71,7 +71,7 @@ class FrontPageController extends Controller
             return redirect(route('landing'));
         }
 
-        $papers = Paper::latest('created_at')->paginate(3);
+        $papers = Paper::where('status', 1)->latest('created_at')->paginate(3);
 
         return view('frontpage.prestasi.paper', compact('papers'));
     }
@@ -81,7 +81,7 @@ class FrontPageController extends Controller
             return redirect(route('landing'));
         }
         
-        $exchanges = Exchange::latest('created_at')->paginate(3);
+        $exchanges = Exchange::where('status', 1)->latest('created_at')->paginate(3);
 
         return view('frontpage.prestasi.exchange', compact('exchanges'));
     }

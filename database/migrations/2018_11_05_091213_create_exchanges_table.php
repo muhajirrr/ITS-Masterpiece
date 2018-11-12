@@ -21,6 +21,7 @@ class CreateExchangesTable extends Migration
             $table->string('keterangan');
             $table->string('bukti');
             $table->tinyInteger('status');
+            $table->string('keterangan_reject')->nullable();
             $table->unsignedInteger('id_user');
             $table->timestamps();
         });

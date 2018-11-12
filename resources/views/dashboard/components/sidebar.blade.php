@@ -32,6 +32,13 @@
             </li>
             @endcan
 
+            <li>
+                <a href="{{ route('exchange.index') }}">
+                    <i class="ti-exchange-vertical"></i>
+                    <p>Exchange</p>
+                </a>
+            </li>
+
             @can('Lihat User')
             <li>
                 <a href="{{ route('user.index') }}">
