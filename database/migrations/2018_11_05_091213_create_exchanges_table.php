@@ -16,6 +16,7 @@ class CreateExchangesTable extends Migration
         Schema::create('exchanges', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama');
+            $table->char('nrp', 14);
             $table->char('angkatan', 4);
             $table->string('keterangan');
             $table->string('bukti');
