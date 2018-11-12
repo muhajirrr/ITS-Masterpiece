@@ -33,11 +33,13 @@ class RoleTableSeeder extends Seeder
             'Hapus User',
         ]);
 
-        User::where('username', 'admin')->first()->assignRole('Admin');
-
+        
         $departemen->givePermissionTo([
             'Tambah Prestasi',
             'Edit Prestasi',
         ]);
+
+        User::where('username', 'admin')->first()->assignRole('Admin');
+        User::where('username', 'hmtc')->first()->assignRole('Departemen');
     }
 }

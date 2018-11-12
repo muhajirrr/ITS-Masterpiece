@@ -15,13 +15,12 @@ class CreateLombasTable extends Migration
     {
         Schema::create('lombas', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nama');
-            $table->char('angkatan', 4);
             $table->string('nama_lomba');
             $table->string('juara');
             $table->string('penyelenggara');
             $table->string('bukti');
             $table->tinyInteger('status');
+            $table->string('keterangan_reject')->nullable();
             $table->unsignedInteger('id_user');
             $table->timestamps();
         });

@@ -55,6 +55,8 @@ Route::prefix('/dashboard')->group(function() {
         Route::get('/{id}/edit', 'LombaController@edit')->name('lomba.edit');
         Route::put('/{id}/update', 'LombaController@update')->name('lomba.update');
         Route::delete('/{id}/delete', 'LombaController@destroy')->name('lomba.delete');
+        Route::post('/{id}/accept', 'LombaController@accept')->name('lomba.accept');
+        Route::post('/{id}/reject', 'LombaController@reject')->name('lomba.reject');
     });
     
     Route::prefix('/exchange')->group(function() {

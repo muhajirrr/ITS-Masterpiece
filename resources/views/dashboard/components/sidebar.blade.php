@@ -33,6 +33,13 @@
             @endcan
 
             <li>
+                <a href="{{ route('lomba.index') }}">
+                    <i class="ti-flag"></i>
+                    <p>Lomba</p>
+                </a>
+            </li>
+
+            <li>
                 <a href="{{ route('exchange.index') }}">
                     <i class="ti-exchange-vertical"></i>
                     <p>Exchange</p>

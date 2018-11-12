@@ -17,5 +17,11 @@ class UsersTableSeeder extends Seeder
             'name' => 'Admin',
             'password' => 'hehe'
         ]);
+
+        User::create([
+            'username' => 'hmtc',
+            'name' => 'HMTC',
+            'password' => 'hehe'
+        ]);
     }
 }
