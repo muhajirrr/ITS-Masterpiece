@@ -86,6 +86,8 @@ Route::prefix('/dashboard')->group(function() {
         Route::get('/{id}/edit', 'PKMController@edit')->name('pkm.edit');
         Route::put('/{id}/update', 'PKMController@update')->name('pkm.update');
         Route::delete('/{id}/delete', 'PKMController@destroy')->name('pkm.delete');
+        Route::post('/{id}/accept', 'PKMController@accept')->name('pkm.accept');
+        Route::post('/{id}/reject', 'PKMController@reject')->name('pkm.reject');
     });
 });
 

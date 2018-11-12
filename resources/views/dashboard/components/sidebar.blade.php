@@ -40,6 +40,20 @@
             </li>
 
             <li>
+                <a href="{{ route('pkm.index') }}">
+                    <i class="ti-brush-alt"></i>
+                    <p>PKM</p>
+                </a>
+            </li>
+
+            <li>
+                <a href="{{ route('paper.index') }}">
+                    <i class="ti-clipboard"></i>
+                    <p>Paper</p>
+                </a>
+            </li>
+
+            <li>
                 <a href="{{ route('exchange.index') }}">
                     <i class="ti-exchange-vertical"></i>
                     <p>Exchange</p>

@@ -8,6 +8,14 @@ class PKM extends Model
 {
     protected $table = 'pkms';
     protected $fillable = [
-        'nama', 'judul', 'juara', 'bukti', 'status', 'id_user'
+        'judul', 'juara', 'bukti', 'status', 'id_user'
     ];
+
+    public function user() {
+        return $this->belongsTo('App\User', 'id_user');
+    }
+
+    public function anggota() {
+        return $this->hasMany('App\AnggotaPkm', 'id_pkm');
+    }
 }

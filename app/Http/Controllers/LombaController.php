@@ -49,12 +49,14 @@ class LombaController extends Controller
         ]);
 
         foreach($request->anggota as $anggota) {
-            $anggota = AnggotaLomba::create([
-                'nama' => $anggota['nama'],
-                'nrp' => $anggota['nrp'],
-                'angkatan' => $anggota['angkatan'],
-                'id_lomba' => $lomba->id
-            ]);
+            if ($anggota['nama'] && $anggota['nrp'] && $anggota['angkatan']) {
+                $anggota = AnggotaLomba::create([
+                    'nama' => $anggota['nama'],
+                    'nrp' => $anggota['nrp'],
+                    'angkatan' => $anggota['angkatan'],
+                    'id_lomba' => $lomba->id
+                ]);
+            }
         }
 
         return redirect(route('lomba.index'));

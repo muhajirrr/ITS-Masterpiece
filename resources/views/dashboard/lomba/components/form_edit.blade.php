@@ -3,7 +3,7 @@
 <div class="anggota" style="margin-bottom: 12px">
     <div>
         <label><span style="font-size:2rem">Anggota</span></label>
-        <button class="btn btn-info btn-sm pull-right" onclick="tambah_anggota()">Tambah Anggota</button>
+        <button type="button" class="btn btn-info btn-sm pull-right" onclick="tambah_anggota()">Tambah Anggota</button>
     </div>
     @foreach ($lomba->anggota as $key => $anggota)
         <div class="row">

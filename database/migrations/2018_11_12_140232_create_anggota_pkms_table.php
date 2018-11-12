@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePKMsTable extends Migration
+class CreateAnggotaPkmsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,12 @@ class CreatePKMsTable extends Migration
      */
     public function up()
     {
-        Schema::create('pkms', function (Blueprint $table) {
+        Schema::create('anggota_pkms', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('judul');
-            $table->string('juara');
-            $table->string('bukti');
-            $table->string('status');
-            $table->string('keterangan_reject')->nullable();
-            $table->unsignedInteger('id_user');
+            $table->string('nama');
+            $table->char('nrp', 14);
+            $table->char('angkatan', 4);
+            $table->unsignedInteger('id_pkm');
             $table->timestamps();
         });
     }
@@ -32,6 +30,6 @@ class CreatePKMsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('p_k_ms');
+        Schema::dropIfExists('anggota_pkms');
     }
 }

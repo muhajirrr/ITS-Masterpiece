@@ -9,7 +9,7 @@
                 <div class="card">
                     <div class="header">
                         <h4 class="title">
-                            Waiting Lomba <a href="{{ route('lomba.create') }}" class="btn btn-info btn-wd pull-right">Tambah Lomba</a>
+                            Waiting Lomba
                         </h4>
                         <p class="category">Daftar Lomba</p>
                     </div>
@@ -128,6 +128,7 @@
                                     <th>Juara</th>
                                     <th>Penyelenggara</th>
                                     <th>Bukti</th>
+                                    <th>Keterangan Reject</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -145,6 +146,7 @@
                                         <td>{{ $lomba->juara }}</td>
                                         <td>{{ $lomba->penyelenggara }}</td>
                                         <td><a href="{{ asset(Storage::url($lomba->bukti)) }}" target="_blank">Lihat Bukti</a></td>
+                                        <td>{{ $lomba->keterangan_reject }}</td>
                                     </tr>
                                 @empty
                                     <tr>

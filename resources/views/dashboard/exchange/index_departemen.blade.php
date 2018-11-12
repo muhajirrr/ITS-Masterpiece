@@ -108,6 +108,7 @@
                                     <th>Departemen</th>
                                     <th>Keterangan</th>
                                     <th>Bukti</th>
+                                    <th>Keterangan Reject</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -120,6 +121,7 @@
                                         <td>{{ $exchange->user->name }}</td>
                                         <td>{{ $exchange->keterangan }}</td>
                                         <td><a href="{{ asset(Storage::url($exchange->bukti)) }}" target="_blank">Lihat Bukti</a></td>
+                                        <td>{{ $exchange->keterangan_reject }}</td>
                                         <td><a href="{{ route('exchange.edit', $exchange->id) }}" class="btn btn-warning">Edit</a></td>
                                     </tr>
                                 @empty
