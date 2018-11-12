@@ -77,6 +77,8 @@ Route::prefix('/dashboard')->group(function() {
         Route::get('/{id}/edit', 'PaperController@edit')->name('paper.edit');
         Route::put('/{id}/update', 'PaperController@update')->name('paper.update');
         Route::delete('/{id}/delete', 'PaperController@destroy')->name('paper.delete');
+        Route::post('/{id}/accept', 'PaperController@accept')->name('paper.accept');
+        Route::post('/{id}/reject', 'PaperController@reject')->name('paper.reject');
     });
 
     Route::prefix('/pkm')->group(function() {

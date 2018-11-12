@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePapersTable extends Migration
+class CreateAnggotaPapersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,12 @@ class CreatePapersTable extends Migration
      */
     public function up()
     {
-        Schema::create('papers', function (Blueprint $table) {
+        Schema::create('anggota_papers', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('judul');
-            $table->string('status_paper');
-            $table->string('bukti');
-            $table->tinyInteger('status');
-            $table->string('keterangan_reject')->nullable();
-            $table->unsignedInteger('id_user');
+            $table->string('nama');
+            $table->char('nrp', 14);
+            $table->char('angkatan', 4);
+            $table->unsignedInteger('id_paper');
             $table->timestamps();
         });
     }
@@ -32,6 +30,6 @@ class CreatePapersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('papers');
+        Schema::dropIfExists('anggota_papers');
     }
 }
