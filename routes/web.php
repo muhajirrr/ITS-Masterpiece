@@ -19,6 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/karya/{title}', 'FrontPageController@read_karya')->name('karya.read');
+Route::get('/kompetisi/{title}', 'FrontPageController@read_kompetisi')->name('kompetisi.read');
 
 Route::prefix('/dashboard')->group(function() {
     Route::prefix('/user')->group(function() {

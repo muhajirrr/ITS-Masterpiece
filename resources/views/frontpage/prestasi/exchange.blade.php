@@ -10,6 +10,14 @@
                                 <td>: {{ $exchange->nama }}</td>
                             </tr>
                             <tr>
+                                <td>NRP</td>
+                                <td>: {{ $exchange->nrp }}</td>
+                            </tr>
+                            <tr>
+                                <td>Angkatan</td>
+                                <td>: {{ $exchange->angkatan }}</td>
+                            </tr>
+                            <tr>
                                 <td>Angkatan</td>
                                 <td>: {{ $exchange->angkatan }}</td>
                             </tr>

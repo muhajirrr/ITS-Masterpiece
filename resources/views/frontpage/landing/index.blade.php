@@ -1,5 +1,40 @@
 @extends('frontpage.template')
 
+@section('css')
+    <link rel="stylesheet" href="{{ asset('owlslider/assets/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('owlslider/assets/owl.theme.default.min.css') }}">
+    <style>
+        .owl-carousel .owl-nav .owl-prev, .owl-carousel .owl-nav .owl-next {
+            position: absolute;
+            top: 45%;
+            background: #00000099 !important;
+            padding: unset !important;
+            color: white !important;
+        }
+
+        .owl-carousel .owl-nav .owl-prev {
+            left: 10px;
+        }
+
+        .owl-carousel .owl-nav .owl-next {
+            right: 10px;
+        }
+
+        .item-caption {
+            position: absolute;
+            bottom: 0;
+            background: #00000099;
+            padding: 24px 36px;
+            width: 100%;
+            font-size: medium;
+        }
+
+        .item-caption a {
+            color: white
+        }
+    </style>
+@endsection
+
 @section('tab')
     <div class="nav-menu ui center aligned grid container">
         <div class="ui secondary pointing menu column main-menu">
@@ -31,6 +66,7 @@
 @endsection
 
 @section('js')
+    <script src="{{ asset('owlslider/owl.carousel.min.js') }}"></script>
     <script>
         $(function() {
             $('.main-menu .item').tab('change tab', 'karya');
@@ -51,10 +87,15 @@
         });
     
         function getArticles(url) {
+            var prestasi = url.indexOf('prestasi') >= 0;
             $.ajax({
                 url : url
             }).done(function (data) {
-                $('.ui.tab.active').html(data);  
+                if (prestasi) {
+                    $('.prestasi-content .ui.tab.active').html(data);
+                } else {
+                    $('.ui.tab.active').html(data);
+                }
             }).fail(function () {
                 alert('Articles could not be loaded.');
             });

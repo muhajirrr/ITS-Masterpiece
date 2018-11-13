@@ -158,3 +158,11 @@ ul.pagination li {
 .page-item:not(.active) .page-link {
     color: black;
 }
+
+.owl-item .img {
+    width: 100% !important;
+    height: 360px !important;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

@@ -19,9 +19,9 @@
     <div class="twelve wide stretched column">
         <div class="prestasi-content">
             <div class="ui tab active" data-tab="lomba"></div>
-            <div class="ui tab active" data-tab="pkm"></div>
-            <div class="ui tab active" data-tab="paper"></div>
-            <div class="ui tab active" data-tab="exchange"></div>
+            <div class="ui tab" data-tab="pkm"></div>
+            <div class="ui tab" data-tab="paper"></div>
+            <div class="ui tab" data-tab="exchange"></div>
         </div>
     </div>
 </div>

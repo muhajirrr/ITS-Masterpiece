@@ -18,14 +18,15 @@ class FrontPageController extends Controller
         }
 
         $karyas = KaryaMahasiswa::latest('created_at')->paginate(3);
+        $karyas_slide = KaryaMahasiswa::all();
 
-        return view('frontpage.karya.index', compact('karyas'));
+        return view('frontpage.karya.index', compact('karyas', 'karyas_slide'));
     }
 
     public function read_karya($title) {
-        $karya = KaryaMahasiswa::where('title_slug', $title)->firstOrFail();
+        $post = KaryaMahasiswa::where('title_slug', $title)->firstOrFail();
 
-        return view('frontpage.landing.read', compact('karya'));
+        return view('frontpage.landing.read', compact('post'));
     }
 
     public function kompetisi(Request $request) {
@@ -34,8 +35,15 @@ class FrontPageController extends Controller
         }
 
         $kompetisis = Kompetisi::latest('created_at')->paginate(3);
+        $kompetisis_slide = Kompetisi::all();
 
-        return view('frontpage.kompetisi.index', compact('kompetisis'));
+        return view('frontpage.kompetisi.index', compact('kompetisis', 'kompetisis_slide'));
+    }
+
+    public function read_kompetisi($title) {
+        $post = Kompetisi::where('title_slug', $title)->firstOrFail();
+
+        return view('frontpage.landing.read', compact('post'));
     }
 
     public function prestasi(Request $request) {

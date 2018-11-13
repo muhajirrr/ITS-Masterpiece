@@ -2,7 +2,7 @@
     <div class="ui three column grid container" style="margin-bottom: .4rem">
         <div class="middle aligned row">
             <div class="column brand">
-                <a href="/">Masterpiece ITS</a>
+                <a href="/"><img src="{{ asset('img/logo.png') }}" style="width:213px"></a>
             </div>
             <div class="column logo">
                 <ul>
