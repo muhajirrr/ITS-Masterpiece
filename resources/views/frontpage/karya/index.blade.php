@@ -1,3 +1,5 @@
+<h1 class="ui centered header">Karya Mahasiswa</h1><br>
+
 <div class="owl-carousel owl-theme">
     @foreach ($karyas_slide as $karya)
     <div class="item">

@@ -1,4 +1,4 @@
-<div class="ui items" style="padding-left: 24px">
+<div class="ui items">
     @foreach ($papers as $paper)
         <div class="ui item post unstackable">
             <div class="content" style="padding: 1em; position: relative">

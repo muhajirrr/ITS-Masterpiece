@@ -35,8 +35,14 @@
     </style>
 @endsection
 
+@section('mobile_tab')
+    <div class="tablet mobile only eight wide right aligned column">
+        <a id="mobile_item"><i class="large bars icon" style="color: white"></i></a>
+    </div>
+@endsection
+
 @section('tab')
-    <div class="nav-menu ui center aligned grid container">
+    <div class="computer only nav-menu ui center aligned grid container">
         <div class="ui secondary pointing menu column main-menu">
             <a class="active item" data-tab="karya">
                 Karya Mahasiswa
@@ -49,18 +55,29 @@
             </a>
         </div>
     </div>
+
+    <div class="ui right inverted sidebar vertical menu main-menu">
+        <a class="active item" data-tab="karya">
+            Karya Mahasiswa
+        </a>
+        <a class="item" data-tab="kompetisi">
+            Kompetisi Nasional/Internasional
+        </a>
+        <a class="item" data-tab="prestasi">
+            Galeri Prestasi
+        </a>
+        <a href="/login" class="item">Login</a>
+    </div>
 @endsection
 
 @section('content')
     <div class="landing-content">
-        <div class="ui grid">
-            <div class="three wide column"></div>
-            <div class="ten wide column">
+        <div class="ui centered grid">
+            <div class="fourteen wide mobile tablet twelve wide computer column">
                 <div class="ui tab active" data-tab="karya"></div>
                 <div class="ui tab" data-tab="kompetisi"></div>
                 <div class="ui tab" data-tab="prestasi"></div>
             </div>
-            <div class="three wide column"></div>
         </div>
     </div>
 @endsection

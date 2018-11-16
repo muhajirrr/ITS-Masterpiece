@@ -1,3 +1,5 @@
+<h1 class="ui centered header">Kompetisi Nasional/Internasional</h1><br>
+
 <div class="owl-carousel owl-theme">
     @foreach ($kompetisis_slide as $kompetisi)
     <div class="item">

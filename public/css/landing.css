@@ -14,6 +14,10 @@ body {
     font-size: 1.8rem;
 }
 
+.brand img {
+    max-width: 100%;
+}
+
 .btn, .flat-btn {
     text-decoration: none;
     padding: 10px 15px;
@@ -120,6 +124,7 @@ body {
 ul.pagination {
     list-style-type: none;
     text-align: center;
+    padding: unset;
 }
 
 ul.pagination li {
