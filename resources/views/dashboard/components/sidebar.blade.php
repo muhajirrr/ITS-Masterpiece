@@ -1,7 +1,7 @@
 <div class="sidebar" data-background-color="black" data-active-color="warning">
     <div class="sidebar-wrapper">
         <div class="logo">
-            <a href="/" class="simple-text">
+            <a href="{{ route('landing') }}" class="simple-text">
                 Masterpiece ITS
             </a>
         </div>

@@ -63,7 +63,7 @@
         alwaysRefresh: true,
         cache: false,
         apiSettings: {
-            url: '/prestasi/{tab}'
+            url: "{{ route('landing') }}/prestasi/{tab}"
         }
     });
 </script>

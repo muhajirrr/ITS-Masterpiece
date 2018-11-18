@@ -51,7 +51,7 @@
                     </div>
 
                     <div class="extra" style="position:absolute; bottom:0; top:auto; padding-right:18px;">
-                        <a href="{{ Storage::url($lomba->bukti) }}" class="ui right floated flat-btn" target="_blank">Bukti &rarr;</a>
+                        <a href="{{ asset(Storage::url($lomba->bukti)) }}" class="ui right floated flat-btn" target="_blank">Bukti &rarr;</a>
                     </div>
                 </div>
             </div>

@@ -66,7 +66,7 @@
         <a class="item" data-tab="prestasi">
             Galeri Prestasi
         </a>
-        <a href="/login" class="item">Login</a>
+        <a href="{{ route('login') }}" class="item">Login</a>
     </div>
 @endsection
 
@@ -94,7 +94,7 @@
             cache: false,
             apiSettings: {
                 loadingDuration: 300,
-                url: '/{tab}'
+                url: "{{ route('landing') }}/{tab}"
             }
         });
     
