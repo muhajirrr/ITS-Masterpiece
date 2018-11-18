@@ -79,6 +79,7 @@
                                     <th>Judul</th>
                                     <th>Status Paper</th>
                                     <th>Bukti</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -95,6 +96,12 @@
                                         <td>{{ $paper->judul }}</td>
                                         <td>{{ $paper->status_paper }}</td>
                                         <td><a href="{{ asset(Storage::url($paper->bukti)) }}" target="_blank">Lihat Bukti</a></td>
+                                        <td>
+                                            <button class="btn btn-danger" onclick="delete_action('#formDelete{{ $paper->id }}')">Delete</button>
+
+                                            {!! Form::open(['route' => ['paper.delete', $paper->id], 'method' => 'DELETE', 'id' => 'formDelete'.$paper->id]) !!}
+                                            {!! Form::close() !!}
+                                        </td>
                                     </tr>
                                 @empty
                                     <tr>
@@ -186,6 +193,21 @@
                 if (value) {
                     $('#keteranganReject'+id).val(`${value}`);
                     $('#formReject'+id).submit();
+                }
+            });
+        }
+
+        function delete_action(id_form) {
+            swal({
+                title: "Are you sure?",
+                text: "Once deleted, you will not be able to recover this post!",
+                icon: "warning",
+                buttons: [true, 'Delete'],
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                    $(id_form).submit();
                 }
             });
         }

@@ -52,7 +52,7 @@
     function delete_action(id_form) {
         swal({
             title: "Are you sure?",
-            text: "Once deleted, you will not be able to recover this user!",
+            text: "Once deleted, you will not be able to recover this post!",
             icon: "warning",
             buttons: [true, 'Delete'],
             dangerMode: true,
