@@ -35,6 +35,10 @@
                                 @endif
                             @endforeach
                             <tr>
+                                <td>Departemen</td>
+                                <td>: {{ $paper->user->name }}</td>
+                            </tr>
+                            <tr>
                                 <td>Judul</td>
                                 <td>: {{ $paper->judul }}</td>
                             </tr>

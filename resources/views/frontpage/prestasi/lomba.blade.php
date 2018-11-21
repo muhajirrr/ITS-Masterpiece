@@ -35,6 +35,10 @@
                                     @endif
                                 @endforeach
                                 <tr>
+                                    <td>Departemen</td>
+                                    <td>: {{ $lomba->user->name }}</td>
+                                </tr>
+                                <tr>
                                     <td>Nama Lomba</td>
                                     <td>: {{ $lomba->nama_lomba }}</td>
                                 </tr>

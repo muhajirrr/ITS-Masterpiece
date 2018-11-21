@@ -18,8 +18,8 @@
                                 <td>: {{ $exchange->angkatan }}</td>
                             </tr>
                             <tr>
-                                <td>Angkatan</td>
-                                <td>: {{ $exchange->angkatan }}</td>
+                                <td>Departemen</td>
+                                <td>: {{ $exchange->user->name }}</td>
                             </tr>
                             <tr>
                                 <td>Keterangan</td>
