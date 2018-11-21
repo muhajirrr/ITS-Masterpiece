@@ -16,6 +16,7 @@ class CreateLombasTable extends Migration
         Schema::create('lombas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama_lomba');
+            $table->string('kategori', 10);
             $table->string('juara');
             $table->string('penyelenggara');
             $table->string('bukti');

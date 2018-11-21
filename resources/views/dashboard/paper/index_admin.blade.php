@@ -65,7 +65,7 @@
                 <div class="card">
                     <div class="header">
                         <h4 class="title">
-                            Accepted Paper
+                            Accepted Paper <a href="{{ route('paper.export') }}" class="btn btn-info btn-wd pull-right">Export to Excel</a>
                         </h4>
                         <p class="category">Daftar Paper</p>
                     </div>

@@ -8,6 +8,9 @@ use App\Http\Requests\UpdatePaper;
 use App\Paper;
 use Illuminate\Support\Facades\Auth;
 use App\AnggotaPaper;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\PaperExport;
+use Illuminate\Support\Carbon;
 
 class PaperController extends Controller
 {
@@ -17,15 +20,15 @@ class PaperController extends Controller
 
     public function index() {
         if (Auth::user()->hasRole('Admin')) {
-            $papers_wait = Paper::where('status', 0)->get();
-            $papers_accepted = Paper::where('status', 1)->get();
-            $papers_rejected = Paper::where('status', 2)->get();
+            $papers_wait = Paper::waiting()->get();
+            $papers_accepted = Paper::accepted()->get();
+            $papers_rejected = Paper::rejected()->get();
 
             return view('dashboard.paper.index_admin', compact('papers_wait', 'papers_accepted', 'papers_rejected'));
         } else if (Auth::user()->hasRole('Departemen')) {
-            $papers_wait = Paper::where('status', 0)->where('id_user', Auth::user()->id)->get();
-            $papers_accepted = Paper::where('status', 1)->where('id_user', Auth::user()->id)->get();
-            $papers_rejected = Paper::where('status', 2)->where('id_user', Auth::user()->id)->get();
+            $papers_wait = Paper::waiting()->where('id_user', Auth::user()->id)->get();
+            $papers_accepted = Paper::accepted()->where('id_user', Auth::user()->id)->get();
+            $papers_rejected = Paper::rejected()->where('id_user', Auth::user()->id)->get();
 
             return view('dashboard.paper.index_departemen', compact('papers_wait', 'papers_accepted', 'papers_rejected'));
         } else {
@@ -121,5 +124,9 @@ class PaperController extends Controller
         $paper->save();
 
         return redirect(route('paper.index'));
+    }
+
+    public function export() {
+        return Excel::download(new PaperExport, 'paper_'. Carbon::now()->format('Ymd') .'.xlsx');
     }
 }

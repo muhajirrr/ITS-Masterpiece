@@ -58,6 +58,7 @@ Route::prefix('/dashboard')->group(function() {
         Route::delete('/{id}/delete', 'LombaController@destroy')->name('lomba.delete');
         Route::post('/{id}/accept', 'LombaController@accept')->name('lomba.accept');
         Route::post('/{id}/reject', 'LombaController@reject')->name('lomba.reject');
+        Route::get('/export', 'LombaController@export')->name('lomba.export');
     });
     
     Route::prefix('/exchange')->group(function() {
@@ -69,6 +70,7 @@ Route::prefix('/dashboard')->group(function() {
         Route::delete('/{id}/delete', 'ExchangeController@destroy')->name('exchange.delete');
         Route::post('/{id}/accept', 'ExchangeController@accept')->name('exchange.accept');
         Route::post('/{id}/reject', 'ExchangeController@reject')->name('exchange.reject');
+        Route::get('/export', 'ExchangeController@export')->name('exchange.export');
     });
     
     Route::prefix('/paper')->group(function() {
@@ -80,6 +82,7 @@ Route::prefix('/dashboard')->group(function() {
         Route::delete('/{id}/delete', 'PaperController@destroy')->name('paper.delete');
         Route::post('/{id}/accept', 'PaperController@accept')->name('paper.accept');
         Route::post('/{id}/reject', 'PaperController@reject')->name('paper.reject');
+        Route::get('/export', 'PaperController@export')->name('paper.export');
     });
 
     Route::prefix('/pkm')->group(function() {
@@ -91,6 +94,7 @@ Route::prefix('/dashboard')->group(function() {
         Route::delete('/{id}/delete', 'PKMController@destroy')->name('pkm.delete');
         Route::post('/{id}/accept', 'PKMController@accept')->name('pkm.accept');
         Route::post('/{id}/reject', 'PKMController@reject')->name('pkm.reject');
+        Route::get('/export', 'PKMController@export')->name('pkm.export');
     });
 });
 
@@ -102,7 +106,3 @@ Route::get('/prestasi/lomba', 'FrontPageController@lomba');
 Route::get('/prestasi/pkm', 'FrontPageController@pkm');
 Route::get('/prestasi/paper', 'FrontPageController@paper');
 Route::get('/prestasi/exchange', 'FrontPageController@exchange');
-
-Route::get('/prestasi/{test}', function($test) {
-    return $test;
-})->name('ajax');

@@ -33,6 +33,11 @@
 </div>
 
 <div class="form-group">
+    {!! Form::label('kategori', 'Kategori') !!}
+    {!! Form::select('kategori', ['Individu' => 'Individu', 'Tim' => 'Tim'], null, ['class' => 'form-control border-input', 'placeholder' => 'Select Kategori', 'required']) !!}
+</div>
+
+<div class="form-group">
     {!! Form::label('juara', 'Juara') !!}
     {!! Form::text('juara', null, ['class' => 'form-control border-input', 'placeholder' => 'Juara', 'required']) !!}
 </div>

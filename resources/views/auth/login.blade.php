@@ -21,7 +21,7 @@
             @endif
             
             <form method="POST" action="{{ route('login') }}" class="ui large form" autocomplete="off">
-                @csrf
+                {{ csrf_field() }}
                 <div class="ui stacked segment">
                     <div class="field">
                         <div class="ui left icon input">
@@ -35,11 +35,37 @@
                             <input type="password" name="password" placeholder="Password">
                         </div>
                     </div>
-                    <button type="submit" class="ui fluid large primary submit button">Login</button>
+                    <div class="field">
+                        <button type="submit" class="ui fluid large primary submit button">Login</button>
+                    </div>
+                    <button type="button" class="ui fluid large blue sop button">SOP</button>
                 </div>
 
 
             </form>
+
+            <div class="ui sop small modal">
+                <i class="close icon"></i>
+                <div class="header">
+                    SOP Upload Prestasi
+                </div>
+                <div class="content">
+                    <p>Berikut Tata Cara Upload Prestasi:</p>
+                    <ol>
+                        <li>Login menggunakan akun yang telah diberikan kepada bagian Ristek Himpunan Mahasiswa Departemen masing masing di ITS.</li>
+                        <li>Lengkapi formulir yang disediakan serta unggah bukti hasil pengumuman lomba/exchange/paper berupa foto, dokumen, link, atau sejenisnya.</li>
+                        <li>Akan dilakukan penghapusan data prestasi bila ditemukan ketidaksesuaian pada konten yang telah diunggah.</li>
+                    </ol>
+                </div>
+            </div>
         </div>
     </div>
+@endsection
+
+@section('js')
+    <script>
+        $(function() {
+            $('.sop.modal').modal('attach events', '.sop.button', 'show');
+        });
+    </script>
 @endsection

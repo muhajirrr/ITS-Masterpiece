@@ -7,6 +7,9 @@ use App\Http\Requests\StoreExchange;
 use App\Http\Requests\UpdateExchange;
 use App\Exchange;
 use Illuminate\Support\Facades\Auth;
+use App\Exports\ExchangeExport;
+use Illuminate\Support\Carbon;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ExchangeController extends Controller
 {
@@ -16,15 +19,15 @@ class ExchangeController extends Controller
 
     public function index() {
         if (Auth::user()->hasRole('Admin')) {
-            $exchanges_wait = Exchange::where('status', 0)->get();
-            $exchanges_accepted = Exchange::where('status', 1)->get();
-            $exchanges_rejected = Exchange::where('status', 2)->get();
+            $exchanges_wait = Exchange::waiting()->get();
+            $exchanges_accepted = Exchange::accepted()->get();
+            $exchanges_rejected = Exchange::rejected()->get();
     
             return view('dashboard.exchange.index_admin', compact('exchanges_wait', 'exchanges_accepted', 'exchanges_rejected'));
         } else if (Auth::user()->hasRole('Departemen')) {
-            $exchanges_wait = Exchange::where('status', 0)->where('id_user', Auth::user()->id)->get();
-            $exchanges_accepted = Exchange::where('status', 1)->where('id_user', Auth::user()->id)->get();
-            $exchanges_rejected = Exchange::where('status', 2)->where('id_user', Auth::user()->id)->get();
+            $exchanges_wait = Exchange::waiting()->where('id_user', Auth::user()->id)->get();
+            $exchanges_accepted = Exchange::accepted()->where('id_user', Auth::user()->id)->get();
+            $exchanges_rejected = Exchange::rejected()->where('id_user', Auth::user()->id)->get();
     
             return view('dashboard.exchange.index_departemen', compact('exchanges_wait', 'exchanges_accepted', 'exchanges_rejected'));
         } else {
@@ -97,5 +100,9 @@ class ExchangeController extends Controller
         $exchange->save();
 
         return redirect(route('exchange.index'));
+    }
+
+    public function export() {
+        return Excel::download(new ExchangeExport, 'exchange_'. Carbon::now()->format('Ymd') .'.xlsx');
     }
 }

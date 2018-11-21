@@ -8,6 +8,9 @@ use App\Http\Requests\UpdatePKM;
 use App\PKM;
 use App\AnggotaPkm;
 use Illuminate\Support\Facades\Auth;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\PKMExport;
+use Illuminate\Support\Carbon;
 
 class PKMController extends Controller
 {
@@ -16,15 +19,15 @@ class PKMController extends Controller
     }
     public function index() {
         if (Auth::user()->hasRole('Admin')) {
-            $pkms_wait = PKM::where('status', 0)->get();
-            $pkms_accepted = PKM::where('status', 1)->get();
-            $pkms_rejected = PKM::where('status', 2)->get();
+            $pkms_wait = PKM::waiting()->get();
+            $pkms_accepted = PKM::accepted()->get();
+            $pkms_rejected = PKM::rejected()->get();
 
             return view('dashboard.pkm.index_admin', compact('pkms_wait', 'pkms_accepted', 'pkms_rejected'));
         } else if (Auth::user()->hasRole('Departemen')) {
-            $pkms_wait = PKM::where('status', 0)->where('id_user', Auth::user()->id)->get();
-            $pkms_accepted = PKM::where('status', 1)->where('id_user', Auth::user()->id)->get();
-            $pkms_rejected = PKM::where('status', 2)->where('id_user', Auth::user()->id)->get();
+            $pkms_wait = PKM::waiting()->where('id_user', Auth::user()->id)->get();
+            $pkms_accepted = PKM::accepted()->where('id_user', Auth::user()->id)->get();
+            $pkms_rejected = PKM::rejected()->where('id_user', Auth::user()->id)->get();
 
             return view('dashboard.pkm.index_departemen', compact('pkms_wait', 'pkms_accepted', 'pkms_rejected'));
         } else {
@@ -120,5 +123,9 @@ class PKMController extends Controller
         $pkm->save();
 
         return redirect(route('pkm.index'));
+    }
+
+    public function export() {
+        return Excel::download(new PKMExport, 'pkm_'. Carbon::now()->format('Ymd') .'.xlsx');
     }
 }

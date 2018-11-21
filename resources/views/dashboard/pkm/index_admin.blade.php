@@ -65,7 +65,7 @@
                 <div class="card">
                     <div class="header">
                         <h4 class="title">
-                            Accepted PKM
+                            Accepted PKM <a href="{{ route('pkm.export') }}" class="btn btn-info btn-wd pull-right">Export to Excel</a>
                         </h4>
                         <p class="category">Daftar PKM</p>
                     </div>

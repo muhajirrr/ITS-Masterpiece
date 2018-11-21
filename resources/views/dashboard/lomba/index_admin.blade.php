@@ -21,6 +21,7 @@
                                     <th>Anggota</th>
                                     <th>Departemen</th>
                                     <th>Nama Lomba</th>
+                                    <th>Kategori</th>
                                     <th>Juara</th>
                                     <th>Penyelenggara</th>
                                     <th>Bukti</th>
@@ -39,6 +40,7 @@
                                         </td>
                                         <td>{{ $lomba->user->name }}</td>
                                         <td>{{ $lomba->nama_lomba }}</td>
+                                        <td>{{ $lomba->kategori }}</td>
                                         <td>{{ $lomba->juara }}</td>
                                         <td>{{ $lomba->penyelenggara }}</td>
                                         <td><a href="{{ asset(Storage::url($lomba->bukti)) }}" target="_blank">Lihat Bukti</a></td>
@@ -67,7 +69,7 @@
                 <div class="card">
                     <div class="header">
                         <h4 class="title">
-                            Accepted Lomba
+                            Accepted Lomba <a href="{{ route('lomba.export') }}" class="btn btn-info btn-wd pull-right">Export to Excel</a>
                         </h4>
                         <p class="category">Daftar Lomba</p>
                     </div>
@@ -79,6 +81,7 @@
                                     <th>Anggota</th>
                                     <th>Departemen</th>
                                     <th>Nama Lomba</th>
+                                    <th>Kategori</th>
                                     <th>Juara</th>
                                     <th>Penyelenggara</th>
                                     <th>Bukti</th>
@@ -97,6 +100,7 @@
                                         </td>
                                         <td>{{ $lomba->user->name }}</td>
                                         <td>{{ $lomba->nama_lomba }}</td>
+                                        <td>{{ $lomba->kategori }}</td>
                                         <td>{{ $lomba->juara }}</td>
                                         <td>{{ $lomba->penyelenggara }}</td>
                                         <td><a href="{{ asset(Storage::url($lomba->bukti)) }}" target="_blank">Lihat Bukti</a></td>
@@ -132,6 +136,7 @@
                                     <th>Anggota</th>
                                     <th>Departemen</th>
                                     <th>Nama Lomba</th>
+                                    <th>Kategori</th>
                                     <th>Juara</th>
                                     <th>Penyelenggara</th>
                                     <th>Bukti</th>
@@ -150,6 +155,7 @@
                                         </td>
                                         <td>{{ $lomba->user->name }}</td>
                                         <td>{{ $lomba->nama_lomba }}</td>
+                                        <td>{{ $lomba->kategori }}</td>
                                         <td>{{ $lomba->juara }}</td>
                                         <td>{{ $lomba->penyelenggara }}</td>
                                         <td><a href="{{ asset(Storage::url($lomba->bukti)) }}" target="_blank">Lihat Bukti</a></td>

@@ -8,6 +8,9 @@ use App\Http\Requests\UpdateLomba;
 use App\Lomba;
 use App\AnggotaLomba;
 use Illuminate\Support\Facades\Auth;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\LombaExport;
+use Illuminate\Support\Carbon;
 
 class LombaController extends Controller
 {
@@ -17,15 +20,15 @@ class LombaController extends Controller
 
     public function index() {
         if (Auth::user()->hasRole('Admin')) {
-            $lombas_wait = Lomba::where('status', 0)->get();
-            $lombas_accepted = Lomba::where('status', 1)->get();
-            $lombas_rejected = Lomba::where('status', 2)->get();
+            $lombas_wait = Lomba::waiting()->get();
+            $lombas_accepted = Lomba::accepted()->get();
+            $lombas_rejected = Lomba::rejected()->get();
     
             return view('dashboard.lomba.index_admin', compact('lombas_wait', 'lombas_accepted', 'lombas_rejected'));
         } else if (Auth::user()->hasRole('Departemen')) {
-            $lombas_wait = Lomba::where('status', 0)->where('id_user', Auth::user()->id)->get();
-            $lombas_accepted = Lomba::where('status', 1)->where('id_user', Auth::user()->id)->get();
-            $lombas_rejected = Lomba::where('status', 2)->where('id_user', Auth::user()->id)->get();
+            $lombas_wait = Lomba::waiting()->where('id_user', Auth::user()->id)->get();
+            $lombas_accepted = Lomba::accepted()->where('id_user', Auth::user()->id)->get();
+            $lombas_rejected = Lomba::rejected()->where('id_user', Auth::user()->id)->get();
     
             return view('dashboard.lomba.index_departemen', compact('lombas_wait', 'lombas_accepted', 'lombas_rejected'));
         } else {
@@ -41,6 +44,7 @@ class LombaController extends Controller
         $image_path = $request->file('bukti')->store('image', 'public');
         $lomba = Lomba::create([
             'nama_lomba' => $request->nama_lomba,
+            'kategori' => $request->kategori,
             'juara' => $request->juara,
             'penyelenggara' => $request->penyelenggara,
             'bukti' => $image_path,
@@ -81,6 +85,7 @@ class LombaController extends Controller
 
         $lomba->fill([
             'nama_lomba' => $request->nama_lomba,
+            'kategori' => $request->kategori,
             'juara' => $request->juara,
             'penyelenggara' => $request->penyelenggara,
             'status' => 0
@@ -122,5 +127,9 @@ class LombaController extends Controller
         $lomba->save();
 
         return redirect(route('lomba.index'));
+    }
+
+    public function export() {
+        return Excel::download(new LombaExport, 'lomba_'. Carbon::now()->format('Ymd') .'.xlsx');
     }
 }

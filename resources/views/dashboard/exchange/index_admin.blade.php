@@ -61,7 +61,7 @@
                 <div class="card">
                     <div class="header">
                         <h4 class="title">
-                            Accepted Exchange
+                            Accepted Exchange <a href="{{ route('exchange.export') }}" class="btn btn-info btn-wd pull-right">Export to Excel</a>
                         </h4>
                         <p class="category">Daftar Mahasiswa Exchange </p>
                     </div>

@@ -18,4 +18,16 @@ class PKM extends Model
     public function anggota() {
         return $this->hasMany('App\AnggotaPkm', 'id_pkm');
     }
+    
+    public function scopeAccepted($query) {
+        return $query->where('status', 1);
+    }
+
+    public function scopeWaiting($query) {
+        return $query->where('status', 0);
+    }
+
+    public function scopeRejected($query) {
+        return $query->where('status', 2);
+    }
 }
