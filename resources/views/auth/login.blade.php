@@ -52,10 +52,12 @@
                 <div class="content">
                     <p>Berikut Tata Cara Upload Prestasi:</p>
                     <ol>
-                        <li>Login menggunakan akun yang telah diberikan kepada bagian Ristek Himpunan Mahasiswa Departemen masing masing di ITS.</li>
-                        <li>Lengkapi formulir yang disediakan serta unggah bukti hasil pengumuman lomba/exchange/paper berupa foto, dokumen, link, atau sejenisnya.</li>
-                        <li>Akan dilakukan penghapusan data prestasi bila ditemukan ketidaksesuaian pada konten yang telah diunggah.</li>
+                        <li>Login menggunakan akun yang telah diberikan kepada bagian Ristek Himpunan Mahasiswa Departemen masing masing.</li>
+                        <li>Lengkapi formulir yang disediakan serta unggah bukti hasil pengumuman lomba/exchange/paper berupa foto, dokumen atau sejenisnya.</li>
+                        <li>Tunggu persetujuan dari admin.</li>
                     </ol>
+                    <p>Akan dilakukan penghapusan data prestasi bila ditemukan ketidaksesuaian pada konten yang telah diunggah.</p>
+                    <p>CP Line admin: rudal9</p>
                 </div>
             </div>
         </div>
