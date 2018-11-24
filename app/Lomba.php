@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Lomba extends Model
 {
     protected $fillable = [
-        'nama_lomba', 'kategori', 'juara', 'penyelenggara', 'bukti', 'status', 'id_user'
+        'nama_lomba', 'kategori', 'tingkat', 'juara', 'penyelenggara', 'bukti', 'status', 'id_user'
     ];
 
     public function anggota() {

@@ -45,6 +45,7 @@ class LombaController extends Controller
         $lomba = Lomba::create([
             'nama_lomba' => $request->nama_lomba,
             'kategori' => $request->kategori,
+            'tingkat' => $request->tingkat,
             'juara' => $request->juara,
             'penyelenggara' => $request->penyelenggara,
             'bukti' => $image_path,
@@ -86,6 +87,7 @@ class LombaController extends Controller
         $lomba->fill([
             'nama_lomba' => $request->nama_lomba,
             'kategori' => $request->kategori,
+            'tingkat' => $request->tingkat,
             'juara' => $request->juara,
             'penyelenggara' => $request->penyelenggara,
             'status' => 0

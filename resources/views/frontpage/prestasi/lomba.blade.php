@@ -43,6 +43,14 @@
                                     <td>: {{ $lomba->nama_lomba }}</td>
                                 </tr>
                                 <tr>
+                                    <td>Kategori</td>
+                                    <td>: {{ $lomba->kategori }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Tingkat</td>
+                                    <td>: {{ $lomba->tingkat }}</td>
+                                </tr>
+                                <tr>
                                     <td>Juara</td>
                                     <td>: {{ $lomba->juara }}</td>
                                 </tr>

@@ -22,6 +22,7 @@
                                     <th>Departemen</th>
                                     <th>Nama Lomba</th>
                                     <th>Kategori</th>
+                                    <th>Tingkat</th>
                                     <th>Juara</th>
                                     <th>Penyelenggara</th>
                                     <th>Bukti</th>
@@ -41,6 +42,7 @@
                                         <td>{{ $lomba->user->name }}</td>
                                         <td>{{ $lomba->nama_lomba }}</td>
                                         <td>{{ $lomba->kategori }}</td>
+                                        <td>{{ $lomba->tingkat }}</td>
                                         <td>{{ $lomba->juara }}</td>
                                         <td>{{ $lomba->penyelenggara }}</td>
                                         <td><a href="{{ asset(Storage::url($lomba->bukti)) }}" target="_blank">Lihat Bukti</a></td>
@@ -82,6 +84,7 @@
                                     <th>Departemen</th>
                                     <th>Nama Lomba</th>
                                     <th>Kategori</th>
+                                    <th>Tingkat</th>
                                     <th>Juara</th>
                                     <th>Penyelenggara</th>
                                     <th>Bukti</th>
@@ -101,6 +104,7 @@
                                         <td>{{ $lomba->user->name }}</td>
                                         <td>{{ $lomba->nama_lomba }}</td>
                                         <td>{{ $lomba->kategori }}</td>
+                                        <td>{{ $lomba->tingkat }}</td>
                                         <td>{{ $lomba->juara }}</td>
                                         <td>{{ $lomba->penyelenggara }}</td>
                                         <td><a href="{{ asset(Storage::url($lomba->bukti)) }}" target="_blank">Lihat Bukti</a></td>
@@ -137,6 +141,7 @@
                                     <th>Departemen</th>
                                     <th>Nama Lomba</th>
                                     <th>Kategori</th>
+                                    <th>Tingkat</th>
                                     <th>Juara</th>
                                     <th>Penyelenggara</th>
                                     <th>Bukti</th>
@@ -156,6 +161,7 @@
                                         <td>{{ $lomba->user->name }}</td>
                                         <td>{{ $lomba->nama_lomba }}</td>
                                         <td>{{ $lomba->kategori }}</td>
+                                        <td>{{ $lomba->tingkat }}</td>
                                         <td>{{ $lomba->juara }}</td>
                                         <td>{{ $lomba->penyelenggara }}</td>
                                         <td><a href="{{ asset(Storage::url($lomba->bukti)) }}" target="_blank">Lihat Bukti</a></td>

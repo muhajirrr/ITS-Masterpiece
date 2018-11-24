@@ -34,7 +34,12 @@
 
 <div class="form-group">
     {!! Form::label('kategori', 'Kategori') !!}
-    {!! Form::select('kategori', ['Individu' => 'Individu', 'Tim' => 'Tim'], null, ['class' => 'form-control border-input', 'placeholder' => 'Select Kategori', 'required']) !!}
+    {!! Form::select('kategori', ['Individu' => 'Individu', 'Tim' => 'Tim'], null, ['class' => 'form-control border-input', 'placeholder' => 'Pilih Kategori', 'required']) !!}
+</div>
+
+<div class="form-group">
+    {!! Form::label('tingkat', 'Tingkat') !!}
+    {!! Form::select('tingkat', ['Regional/Provinsi' => 'Regional/Provinsi', 'Nasional' => 'Nasional', 'Internasional' => 'Internasional'], null, ['class' => 'form-control border-input', 'placeholder' => 'Pilih Tingkat', 'required']) !!}
 </div>
 
 <div class="form-group">

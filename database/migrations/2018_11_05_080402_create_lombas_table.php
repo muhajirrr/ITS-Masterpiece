@@ -17,6 +17,7 @@ class CreateLombasTable extends Migration
             $table->increments('id');
             $table->string('nama_lomba');
             $table->string('kategori', 10);
+            $table->string('tingkat', 20);
             $table->string('juara');
             $table->string('penyelenggara');
             $table->string('bukti');
